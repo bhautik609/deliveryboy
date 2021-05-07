@@ -1,0 +1,21 @@
+.back {
+    float: left;
+  }
+  .d1 {
+    float: left;
+    padding-right:150px;
+  }
+  .d2 {
+    float: left;
+    padding-right:150px;
+  }
+  .d3 {
+    float: left;
+    padding-right:150px;
+  }
+  .d4 {
+    float: right;
+    margin-top: -200px;
+    /* padding-right:50px; */
+  }
+  

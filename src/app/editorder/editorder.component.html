@@ -1,0 +1,78 @@
+<app-header></app-header>
+<br><br>
+<div style="float: initial;margin-top: 30px;">
+  <mat-card>
+    <h1 style="color:#ff5050;">Update Status </h1>
+    <h4>Current Order Status</h4>
+    <h5> {{status}}</h5>
+    <button class="btn btn-primary" (click)="ChangeStatus()" pButton [disabled]="btnflag" label="Show"> Update</button>
+    |
+    <button class="btn btn-primary" (click)="onTrackCancel()">Cancel</button>
+</mat-card>
+</div>
+
+<h1 style="color:#ff5050;">Order Details</h1>
+<div style="width: auto;">
+  <mat-card>
+    <label>Order Amount</label>
+    <h4>{{order_amt}}</h4>
+    <hr>
+    <!-- <label>Tracking Id</label>
+    <h4>{{track_id}}</h4>
+    <hr> -->
+    <label>Customer Name</label>
+    <h4>{{UserName}}</h4>
+    <hr>
+    <label>Order Id</label>
+    <h4>{{order_id}}</h4>
+    <hr>
+    <label>Bill Date</label>
+    <h4>{{bill_date}}</h4>
+    <hr>
+    <label>Payment Method</label>
+    <h4>{{order_payment}}</h4>
+    <hr>
+    
+  </mat-card>
+</div>
+
+<br><br>
+<mat-card class="example-card" *ngFor="let item of Delivery_Information">
+  <mat-list>
+    <!-- Product ID:
+    <mat-list-item>{{item.pro_id}}</mat-list-item>
+    <mat-divider></mat-divider> -->
+    Product Name:
+    <mat-list-item>{{item.product_name}}</mat-list-item>
+    <mat-divider></mat-divider>
+    Price
+    <mat-list-item>{{item.product_price}}</mat-list-item>
+    <mat-divider></mat-divider>
+    Qty
+    <mat-list-item>{{item.order_qty}}</mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+  <br><br>
+</mat-card>
+
+<!-- <div clas="container">
+
+  <form [formGroup]="track_update" (ngSubmit)="onTrackSubmit()" class="container">
+    <div class="form-group">
+      <select formControlName="status">
+        <option [selected]="track_id">Packing</option>
+        <option [selected]="track_id">On the Way</option>
+        <option [selected]="track_id">Delivered</option>
+      </select>
+    </div>
+    <br>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary" color="primary">UPDATE</button> |
+      <button class="btn btn-primary" (click)="onTrackCancel()">Cancel</button>
+    </div>
+  </form>
+</div> -->
+<br>
+<br>
+<div style="margin-bottom: 180px;"></div>
+<app-footer></app-footer>
