@@ -1,0 +1,115 @@
+<app-header></app-header>
+<mat-card class="example-card" id="track">
+  <form [formGroup]="userform" (ngSubmit)="onSaveClick()">
+
+    <div class="col-md-6 col-sm-6 col-xs-12"
+                    style="margin-left: -0%; margin-right: 60%; margin-bottom: 5%;">
+                    <!-- <img mat-card-image width="50" height="50" src="{{userurl}}"> -->
+                    <img mat-card-image src="{{photourl}}" style="height: 150px;width: 150px;border-radius: 100px;"><br>
+                    change profile photo:- <input type="file" (change)="onChange($event)">
+                  </div>
+
+    <div class="form-group">
+      <label>Email Address <span class="text-danger">*</span></label>
+      <input type="email"  formControlName="user_email" required placeholder="Email Address"
+        name="u_EmailId" class="form-control input-sm required email"><br>
+      <mat-error *ngIf="userform.get('user_email').hasError('required') && !userform.get('user_email').pristine">
+        Email is required</mat-error>
+
+      <mat-error *ngIf="userform.get('user_email').hasError('email')">Email is invalid</mat-error>
+    </div>
+
+    <div class="form-group">
+      <label> Name <span class="text-danger">*</span></label>
+      <input type="text" formControlName="user_name" required placeholder="Enter Name" name="u_Name"
+        class="form-control input-sm required"><br>
+      <mat-error *ngIf="userform.get('user_name').hasError('required') && !userform.get('user_name').pristine">
+        Name is required</mat-error>
+      <mat-error *ngIf="userform.get('user_name').hasError('minlength')">Name must be greater than 5
+        characters
+      </mat-error>
+      <mat-error *ngIf="userform.get('user_name').hasError('pattern')">Only characters are allowed</mat-error>
+    </div>
+
+    <div class="form-group">
+      <label> Password <span class="text-danger">*</span></label>
+      <input type="text" formControlName="user_password" required placeholder="Enter password" name="u_Address"
+        class="form-control input-sm required"><br>
+      
+    </div>
+
+    <div class="form-group">
+      <label> Address <span class="text-danger">*</span></label>
+      <input type="text" formControlName="user_address" required placeholder="Enter Address" name="u_Address"
+        class="form-control input-sm required"><br>
+      <mat-error *ngIf="userform.get('user_address').hasError('required') && !userform.get('user_address').pristine">
+        Address is required</mat-error>
+    </div>
+    
+    <div class="form-group">
+      <label> Age <span class="text-danger">*</span></label>
+      <input type="text" formControlName="user_age" required placeholder="Enter Age" name="u_Address"
+        class="form-control input-sm required"><br>
+      <mat-error *ngIf="userform.get('user_age').hasError('required') && !userform.get('user_age').pristine">
+        Age is required</mat-error>
+    </div>
+
+    <div class="form-group">
+      <label> Mobile No <span class="text-danger">*</span></label>
+      <input type="text" formControlName="user_mob" required placeholder="Enter Mobile No" name="u_mobileno"
+        class="form-control input-sm required">
+      <mat-error *ngIf="userform.get('user_mob').hasError('required') && !userform.get('user_mob').pristine">
+        mobile number is required
+      </mat-error>
+      <mat-error *ngIf="userform.get('user_mob').hasError('maxlength')">mobile number should be 10
+        characters
+      </mat-error>
+      <mat-error *ngIf="userform.get('user_mob').hasError('pattern')">Only numbers are allowed
+      </mat-error>
+    </div>
+
+    <!--<label>Date of Birth</label>
+    <div class="form-group">
+      <input type="Date" formControlName="u_dob" required name="u_dob" placeholder="Enter Date"
+        class="form-control input-sm required" value="u_dob">
+
+      <mat-error *ngIf="user_update.get('u_dob').hasError('required') && !user_update.get('u_dob').pristine">
+        Birthdate is required
+      </mat-error>
+    </div>-->
+
+    <div class="form-group">
+      <label>Gender</label><br>
+      <mat-radio-group aria-label="Select an option" formControlName="user_gender" class="form-control input-sm required">
+        <mat-radio-button value="male">Male</mat-radio-button>
+        <mat-radio-button value="female">Female</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <br />
+    <!--<div class="form-group">
+      <img mat-card-image width="30" height="70" src="">-->
+      <!--<button mat-button color="primary" (click)="editImageuser(u_EmailId)">Image Update</button>-->
+    <!--</div>-->
+    <!--<div class="form-group">
+      <img mat-card-image width="30" height="70" class="form-control" src="{{photourl}}">
+     change profile photo:- <input type="file" (change)="onChange($event)">
+      </div>-->
+
+      <div class="form-group">
+        <label> Type <span class="text-danger">*</span></label>
+        <input type="text" formControlName="user_type" disabled="true" required placeholder="Enter Tge" name="u_Address"
+          class="form-control input-sm required"><br>
+        
+      </div>
+  
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">UPDATE</button>
+      <button class="btn btn-primary" style="margin-left: 2%;" routerLink="/dashbord">Cancel</button>
+    </div>
+   
+  </form>
+</mat-card>
+
+
+<app-footer></app-footer>

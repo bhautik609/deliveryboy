@@ -1,0 +1,33 @@
+.demo {
+  height: "20%";
+  width: "100%";
+  /* background-color: lightblue; */
+  text-align: center;
+}
+table {
+  width: 100%;
+  /* background-color: lightcyan; */
+}
+
+.mat-form-field {
+  font-size: 20px;
+  width: 100%;
+}
+
+img {
+  float: left;
+}
+
+td,
+th {
+  width: 10%;
+}
+
+.bgc {
+  width: 100%;
+  background-color: lightgrey;
+}
+
+.btn {
+  text-align: right;
+}

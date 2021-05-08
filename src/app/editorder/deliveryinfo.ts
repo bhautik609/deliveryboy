@@ -3,6 +3,7 @@ export class DeliveryInfo {
   
       public order_id: number,
       public user_name?: string,
+      public del_id?:number,
       public DelId?: string,
       public track_id?: number,
       public status?: string,

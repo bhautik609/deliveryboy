@@ -56,7 +56,7 @@ export class DashbordComponent implements OnInit {
     //     this.dataSource.sort = this.sort;
     //   }
     // );
-    this._userdataservice.getTotalCountTodaysCash(this.u_EmailId).subscribe(
+    this._userdataservice.getTotalCountTodaysCash(this.user_id).subscribe(
       (data1: any[]) => {
         this.todaysCash = data1[0].total;
         // console.log(this.todaysCash);

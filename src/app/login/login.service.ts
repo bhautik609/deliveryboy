@@ -11,6 +11,7 @@ export class LoginService {
   public urlCashCount: string = environment.url + 'TodaysCash/';
   public url_info: string = environment.url + "deliver_info/";
   public urlDate: string = environment.url + 'updateDeliveyDate/';
+  public url1: string = environment.url +'_user/';
   constructor(private _http:HttpClient) { }
   login(obj)
   {
@@ -39,6 +40,16 @@ export class LoginService {
     //let body = JSON.stringify(item);
     //let head1 = new HttpHeaders().set(environment.header, environment.value);
     return this._http.post(this.urlDate, item);
+  }
+  getPastOrderDate(fk_u_EmailId) {
+    console.log(fk_u_EmailId);
+    return this._http.get(this.urlDate + fk_u_EmailId);
+  }
+  getuserbyemailid(user_id) {
+    return this._http.get(this.url1 + user_id);
+  }
+  edituser(user_id, item) {
+    return this._http.put(this.url1 + user_id, item);
   }
 
 }

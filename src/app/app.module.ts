@@ -23,13 +23,18 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 
-
+import { MatPaginatorModule } from "@angular/material/paginator"
 import { MatMenuModule } from '@angular/material/menu';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DashbordComponent } from './dashbord/dashbord.component';
 import { EditorderComponent } from './editorder/editorder.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { CheckComponent } from './check/check.component';
+import { ProfileComponent } from './profile/profile.component';
+import { PastorderComponent } from './pastorder/pastorder.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +44,11 @@ import { EditorderComponent } from './editorder/editorder.component';
     FooterComponent,
     DashbordComponent,
     EditorderComponent,
+    ContactusComponent,
+    PagenotfoundComponent,
+    CheckComponent,
+    ProfileComponent,
+    PastorderComponent,
    
   ],
   imports: [
@@ -64,7 +74,8 @@ import { EditorderComponent } from './editorder/editorder.component';
    HttpClientModule,
    MatCardModule,
    MatMenuModule,
-   MatTableModule
+   MatTableModule,
+   MatPaginatorModule,
   
   ],
   providers: [],

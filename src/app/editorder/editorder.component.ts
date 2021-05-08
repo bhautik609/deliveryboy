@@ -52,7 +52,7 @@ export class EditorderComponent implements OnInit {
         this.track_id = this.Delivery_Information[0].track_id;
         this.status = this.Delivery_Information[0].status;
         this.UserName = this.Delivery_Information[0].user_name;
-        this.fk_detail_id = this.Delivery_Information[0].delivery_id;
+        this.fk_detail_id = this.Delivery_Information[0].del_id;
         this.order_amt = this.Delivery_Information[0].order_amount;
         this.bill_date = this.Delivery_Information[0].order_date;
         this.order_payment = this.Delivery_Information[0].payment_type;
@@ -78,16 +78,39 @@ export class EditorderComponent implements OnInit {
     }
     if (this.pcount == 1) {
       this.nextStatus = 'On The Way';
-      this.flag = true;
+      alert(' Status Updated!!!!!! Status Has Been Changed from packing to on the way');
     }
     if (this.ocount == 1) {
       this.nextStatus = 'Delivered';
+      alert(' Status Updated!!!!!! Status Has Been Changed from on the way to Delivered');
       this.flag = true;
     }
     console.log(this.nextStatus);
     const toBeupdateobj = {
       status: this.nextStatus
     };
+    this._trackData.updateuser(this.track_id, toBeupdateobj).subscribe(
+      (data1: DeliveryInfo[]) => {
+        console.log(this.track_id, toBeupdateobj, data1);
+        if (this.nextStatus == 'Delivered') {
+          this.bill_date = current_date;
+           console.log(current_date);
+          console.log(this.bill_date, this.fk_detail_id);
+          let dateupdate = {
+            detail_id: this.fk_detail_id,
+            date: current_date,
+          };
+          this._trackData.updateDelievryDate(dateupdate).subscribe(
+            (data2: any[]) => {
+              
+               console.log(data2);
+              // this._rou.navigate(['/dashboard']);
+            }
+          );
+        }
+         this._rou.navigate(['/dashbord']);
+      }
+    );
 
   }
   onTrackCancel() {
